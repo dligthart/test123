@@ -1,0 +1,409 @@
+/** Reset styles **/
+*, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align:baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+    /* system font stack */
+    font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 100%; /* Set the root font size to 100% (default browser size) */
+}
+
+:root {
+    font-size: 16px;
+    scroll-behavior: smooth;
+
+    --size-0: 0rem; /* 0px / 0rem */
+    --size-10: 0.0625rem; /* 1px / 0.0625rem */
+    --size-20: 0.125rem; /* 2px / 0.125rem */
+    --size-30: 0.25rem; /* 4px / 0.25rem */
+    --size-40: 0.5rem; /* 8px / 0.5rem */
+    --size-50: 0.75rem; /* 12px / 0.75rem */
+    --size-60: 1rem; /* 16px / 1rem */
+    --size-70: 1.25rem; /* 20px / 1.25rem */
+    --size-80: 1.5rem; /* 24px / 1.5rem */
+    --size-90: 1.75rem; /* 28px / 1.75rem */
+    --size-100: 2rem; /* 32px / 2rem */
+    --size-110: 2.25rem; /* 36px / 2.25rem */
+    --size-120: 2.5rem; /* 40px / 2.5rem */
+    --size-130: 2.75rem; /* 44px / 2.75rem */
+    --size-140: 3rem; /* 48px / 3rem */
+}
+
+img, picture, video, canvas, svg, iframe {
+    display: block; 
+    max-width: 100%; /* Ensure that the maximum width of these elements is 100% of their container width */
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    /* Apply 'break-word' overflow wrapping to paragraphs and heading elements 
+    to prevent long words from overflowing their containers */
+    overflow-wrap: break-word;
+    line-height: normal;
+}
+
+/** https://typescale.com/ **/ 
+h1 {
+    font-size: 2.986rem; /* Relative to the base font size */
+}
+
+h2 {
+    font-size: 2.488rem; /* Relative to the base font size */
+}
+
+h3 {
+    font-size: 2.074rem; /* Relative to the base font size */
+}
+
+h4 {
+    font-size: 1.728rem;
+}
+
+h5 {
+    font-size: 1.44rem;
+}
+
+h6 {
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+small {
+    font-size: 0.694rem;
+}
+
+body {
+    --primary-color: #fff;
+    --secondary-color: #fff;
+    --primary-text-color: #222;
+    --secondary-text-color: #222;
+    --surface-color: #fff;
+    --bkg-color1: pink;
+    --bkg-color2: lightblue;
+    --bkg-color3: orange;
+    --bkg-color4: green;
+    --bkg-color5: purple;
+}
+
+body.dark-theme {
+    --primary-color: #bb86fc;
+    --secondary-color: #03dac5;
+    --primary-text-color: #f2f2f2;
+    --secondary-text-color: #aaa;
+    --surface-color: #1F1B24;
+    --bkg-color1: #121212;
+    --bkg-color2: #121212;
+    --bkg-color3: #121212;
+    --bkg-color4: #121212;
+    --bkg-color5: #121212;
+}
+
+@media (prefers-color-scheme: dark) {
+    /* defaults to dark theme */
+    body {
+        --primary-color: #bb86fc;
+        --secondary-color: #03dac5;
+        --primary-text-color: #f2f2f2;
+        --secondary-text-color: #aaa;
+        --surface-color: #1F1B24;
+        --bkg-color1: #121212;
+        --bkg-color2: #121212;
+        --bkg-color3: #121212;
+        --bkg-color4: #121212;
+        --bkg-color5: #121212;
+    }
+
+    body.light-theme {
+        --primary-color: #fff;
+        --secondary-color: #fff;
+        --primary-text-color: #222;
+        --secondary-text-color: #222;
+        --surface-color: #fff;
+        --bkg-color1: pink;
+        --bkg-color2: lightblue;
+        --bkg-color3: orange;
+        --bkg-color4: green;
+        --bkg-color5: purple;
+    }
+
+    /** dim image */
+    img {
+        filter: brightness(.6) contrast(1.2);
+    }
+
+    /** brighten image */
+    body.light-theme img {
+        filter: brightness(1) contrast(1);
+    }
+}
+
+body {
+    background-color: var(--bkg-color1);
+
+    /* line-height should never be 1, the linebox will be smaller than the content-area */
+    line-height: 1.5;
+
+    /* Adjust font smoothing for better rendering on various browsers */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: always;
+}
+
+a, p {
+    color: var(--primary-text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--secondary-text-color);
+}
+
+body > header {
+    padding: var(--size-60);
+}
+
+section {
+    padding-bottom: var(--size-60);
+    padding-left: var(--size-60);
+    padding-right: var(--size-60);
+    padding-top: var(--size-60);
+}
+
+article {
+    margin-bottom: var(--size-60);
+    padding: var(--size-60);
+    /*border: 1px solid #ff00ff;*/
+}
+
+section header, section .container  {
+    margin-bottom: var(--size-60);
+    /*border: 1px solid #ff00ff;*/
+}
+
+label {
+    color: var(--primary-color);
+    margin-left: var(--size-40);
+}
+
+.header {
+    background: var(--bkg-color1);
+}
+
+.header__logo {
+    text-decoration: none; /* Remove underline for the link */
+    color: var(--primary-text-color); /* Text color */
+}
+
+.header__nav {
+    margin-top: var(--size-40); /* Add some space between logo and menu */
+}
+
+.header__menu { 
+    display: flex; /* Flexbox is a one-dimensional layout method for laying out items in rows or columns */
+    flex-flow: column wrap; /* The flex items (list items) will be laid out in a row from left to right */
+    justify-content: flex-end;
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+    margin: 0;
+    /*border:1px solid #ff00ff;*/
+}
+.header__menu-item {
+    background-color: var(--secondary-color);
+    border-radius: 4px; /* Rounded corners for each menu item */
+    margin-bottom: 2px;
+    flex: 1;
+    /*width: calc(100% / 4); */ /* Each link takes up equal portion of available width */
+    text-align: center; /* Position the text in the center */
+}
+.header__menu-link {
+    display: block; /* Make the link a block to fill the menu item */
+    padding: var(--size-40); /* Add padding to make it look like a button */
+    text-decoration: none; /* Remove underline for the link */
+    color: var(--primary-text-color); /* Text color */
+}
+
+button {
+    background: var(--primary-color);
+    align-items: center;
+    padding: var(--size-40) var(--size-60);
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-dark-mode {
+    position:fixed;
+    right: var(--size-60);
+}
+
+.button-submit {
+    margin-left: var(--size-40);
+}
+
+.pages {
+    margin: var(--size-60);
+}
+
+.pages__list {
+    list-style: none;
+}
+
+
+.projects {
+    /* We first create a flex layout context */
+    display: flex;
+    
+    /* Then we define the flow direction 
+        and if we allow the items to wrap 
+    * Remember this is the same as:
+    * flex-direction: row;
+    * flex-wrap: wrap;
+    */
+    flex-flow: column;
+    
+    /* Then we define how is distributed the remaining space */
+    justify-content: flex-start;
+
+    overflow:hidden;    
+}
+
+.card {
+    background-color: var(--surface-color);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 4px;
+    margin: var(--size-60);
+}
+
+.card:hover {
+    box-shadow: 0 var(--size-40) var(--size-60) 0 rgba(0,0,0,0.2);
+}
+
+.card__container {
+    /*border: 1px solid #ff00ff;*/
+  
+}
+
+.project-card__title {
+    color: var(--primary-text-color);
+    margin-bottom: var(--size-60);
+    /*border: 1px solid #ff00ff;*/
+}
+
+.project-card__description {
+    color: var(--secondary-text-color);
+}
+
+.project-card__image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+}
+
+.project-card__figure {
+    margin: 0;
+    color: var(--secondary-text-color);
+}
+
+address {
+    color: var(--secondary-color);
+}
+
+#about {
+    background-color: var(--bkg-color2);
+}
+
+#projects {
+    background: var(--bkg-color3);
+}
+
+#media {
+    background: var(--bkg-color4);
+}
+
+#contact {
+    background: var(--bkg-color5);
+}
+
+footer a {
+    color: var(--primary-color);
+}
+
+.footer__menu {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: var(--size-60);
+    list-style: none;
+}
+
+/*
+Start by defining your styles for small screens first, and then use media queries to enhance or modify styles for larger screens. This approach is called mobile-first design and is often recommended for responsive web development.
+*/
+
+@media (min-width: 600px) {  
+    .header__menu {
+        flex-flow: row wrap; 
+        justify-content: space-around;
+    }
+
+    .projects__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        cursor: pointer;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        flex-flow: row;
+    }
+
+    .projects__list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .projects__list.active {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+        transform: scale(1.01);
+    }
+
+    .projects__list-item {
+        min-width:340px;
+        height:auto;
+        color: #222;
+        text-align: center;
+    }
+}
+
+@media (min-width: 800px) {
+    html {
+        font-size: 110%; /* Increase the root font size for larger screens */
+    }
+    
+    .header__menu {
+        flex-flow: row wrap; /* The flex items (list items) will be laid out in a row from left to right */
+        justify-content: flex-end;
+    }
+
+    .header__menu-item {
+        flex: 0;
+        margin-left: var(--size-40);
+    }
+    
+}
